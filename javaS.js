@@ -64,7 +64,7 @@ document.getElementById('menu-button').addEventListener('click', function() {
           <img src="${user.avatarLarger}" alt="Profile picture of TikTok user ${user.nickname}" class="rounded-full" height="80px" width="80px"></center>
           <div class="ml-4 text-xs">
             <center>
-         <p class="mr-3"><strong>${user.uniqueId}</strong></p></center>
+         <p class="mr-3"><strong>@${user.uniqueId}</strong></p></center>
   <div class="biru">
     
 <div class="kotak">
@@ -92,6 +92,15 @@ document.getElementById('menu-button').addEventListener('click', function() {
            
            </div>
     </div>         
+    <center>
+    <div class="hijau">
+       
+       <p>${user.signature}</p>
+       <a href="${user.bioLink.link}" style="text-decoration:underline;">${user.bioLink.link}</a>
+            
+       
+        </div>
+        </center>
         `;
         document.getElementById('tiktok-info').innerHTML = tiktokInfo;
       } catch (error) {

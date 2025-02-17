@@ -1,0 +1,30 @@
+.tombolWA{
+        display:flex;
+        background-color:white;
+        border-radius:5px;
+        padding:2px;
+        border:1px solid #3d3d3d;
+        margin-left:10px;
+        margin-right:10px;
+        
+    }
+    .tombolWA:hover {
+        background-color:#3d3d3d;
+        color:#fff;
+        
+    }
+   .bosan {
+       display:flex;
+       
+       align:center;
+       margin-left:12px;
+       margin-right:12ppx;
+   }
+   .kurangberuntung{
+     
+       margin-left:33px;
+   }
+   .capek {
+     
+       margin-left:12px;
+   }
