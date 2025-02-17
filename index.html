@@ -1,107 +1,115 @@
 <html lang="en">
- <head>
+<head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Simple Website with Navigation Bar
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
+  <title>Simple Website with Navigation Bar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-     .kotak {
-       display: flex;
-       margin-left:3px;
-       margin-right:3px;
-       border:1px solid black;
-     }
-   #sidebar {
-     transform: translateX(-100%);
-     transition: transform 0.3s ease-in-out;
-   }
-   #sidebar.open {
-     transform: translateX(0);
-   }
-   .box {
-   overflow-x:auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.baruu {
-   display:flex;
-}
+      body {
+          background-color:#f3f3f3;
+      }
+    #sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    #sidebar.open {
+      transform: translateX(0);
+    }
+    .hidden-text {
+      display: none;
+    }
+    .kotak {
+        overflow-x:auto;
+        border:1px solid red;
+        width:76px;
+        margin-left:10px;
+    }
+    .biru {
+      border:1px solid blue;  
+      width:270px;
+      display:flex;
+    }
   </style>
- </head>
- <body class="font-roboto">
-  <nav class="bg-blue-600 p-4 fixed w-full z-50 top-0">
-   <div class="container mx-auto flex justify-between items-center">
-    <button class="text-white text-2xl" id="menu-button">
-     <i class="fas fa-bars"></i>
-    </button>
-    <a class="text-white text-2xl font-bold mx-auto" href="#">
-     BELUM JADI
-    </a>
-   </div>
+</head>
+<body class="font-roboto">
+  <nav class="bg-blue-600 p-2 fixed w-full z-50 top-0">
+    <div class="container mx-auto flex justify-between items-center">
+      <button class="text-white text-xl" id="menu-button">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a class="text-white text-xl font-bold mx-auto" href="#">
+        BELUM JADI
+      </a>
+    </div>
   </nav>
   <div class="fixed inset-0 bg-gray-800 bg-opacity-50 z-40 hidden" id="overlay"></div>
   <div class="fixed inset-y-0 left-0 bg-white w-64 p-4 z-50" id="sidebar">
-   <ul class="space-y-4">
-    <li>
-     <a class="text-blue-600 hover:text-blue-800" href="#">
-      Home
-     </a>
-    </li>
-    <li>
-     <a class="text-blue-600 hover:text-blue-800" href="#">
-      About
-     </a>
-    </li>
-    <li>
-     <a class="text-blue-600 hover:text-blue-800" href="#">
-      Services
-     </a>
-    </li>
-   </ul>
-  </div>
-  <div class="kotak">
-      
-      
- 
-   <div class="box">
-    <div id="earthquake-box">
-     <p class="text-lg" id="earthquake-info">
-      Loading latest earthquake data...
-     </p>
+    <div class="flex justify-between items-center mb-4">
+      <span class="text-xl font-bold">Menu</span>
+      <button class="text-xl" id="close-button">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
-   </div>
-  
-  
-  
-  
+    <ul class="space-y-4">
+      <li>
+        <a class="text-blue-600 hover:text-blue-800" href="#">
+          Home
+        </a>
+      </li>
+      <li>
+        <a class="text-blue-600 hover:text-blue-800" href="#">
+          About
+        </a>
+      </li>
+      <li>
+        <a class="text-blue-600 hover:text-blue-800" href="#">
+          Services
+        </a>
+      </li>
+    </ul>
   </div>
-  
-  
-  
+  <div class="container mx-auto mt-4">
+      
+    <div class="p-5 overflow-x-auto">
+      <div class="flex space-x-4">
+        <div class="mt-4 bg-white rounded-lg shadow-lg p-5 w-1/2 min-w-[300px]">
+          <div id="earthquake-box">
+            <p class="text-lg" id="earthquake-info">
+              Loading latest earthquake data...
+            </p>
+          </div>
+        </div>
+        
+      
+      
+        <div class="mt-4 bg-white rounded-lg shadow-lg p-1 w-1/2 min-w-[300px]">
+          <div id="tiktok-box">
+            <p class="text-lg" id="tiktok-info">
+              Loading TikTok user data...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
   <footer class="bg-blue-600 py-4 fixed w-full z-50 bottom-0">
-   <div class="container mx-auto flex justify-around items-center">
-    <a class="text-white text-2xl" href="#">
-     <i class="fas fa-home"></i>
-    </a>
-    <a class="text-white text-2xl" href="#">
-     <i class="fas fa-download"></i>
-    </a>
-    <a class="text-white text-2xl" href="#">
-     <i class="fas fa-user"></i>
-    </a>
-   </div>
+    <div class="container mx-auto flex justify-around items-center">
+      <a class="text-white text-2xl" href="#">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="text-white text-2xl" href="#">
+        <i class="fas fa-download"></i>
+      </a>
+      <a class="text-white text-2xl" href="#">
+        <i class="fas fa-user"></i>
+      </a>
+    </div>
   </footer>
-  <script src="./javaS.js"></script>
- 
- </body>
+  <script src="./javaS.js">
+   
+  </script>
+</body>
 </html>
