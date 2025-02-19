@@ -1,0 +1,339 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>tikDL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-open {
+            transform: translateX(0);
+        }
+        .input-container {
+            position: relative;
+        }
+        .paste-icon {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        #download-mp3-link { 
+            font-size: 15px; /* Ubah ukuran teks tombol */ 
+            padding: 9px 25px; /* Ubah ukuran padding tombol */ 
+            margin: 5px; /* Ubah margin tombol */ 
+            width: 100%;
+            height: 30px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            display: block;
+            text-align: center;
+            line-height: 30px; /* Vertically center the text */
+        }
+        audio {
+            display: block;
+            width: 100%;
+            height: 30px;
+            border: 1px solid #d1d5db; /* Tailwind's gray-300 */
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+        .loading-overlay.active {
+            display: flex;
+        }
+        .loading-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e5e7eb; /* Tailwind's gray-200 */
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .progress-bar-inner {
+            height: 100%;
+            background: #3b82f6; /* Tailwind's blue-500 */
+            width: 0;
+            transition: width 0.2s;
+        }
+      .hasilnyaaa {
+        
+        width:100%;
+      }
+    .bagiannya {
+      overflow-y: auto;
+      border:1px solid #00000025;
+     margin-bottom:4px;
+     margin-top:4px; 
+    }
+    
+    .video-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+    
+    .video-container video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.divideonya {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Agar overlay tidak menghalangi klik */
+}
+.induknya {
+   position: relative
+}
+.divideonya .huhu {
+  height:60px;
+  width:96%;
+  pointer-events: auto; /* Agar teks tetap bisa diinteraksi */
+  position: absolute;
+  bottom: 7px; /* Posisi teks di tengah secara vertikal */
+  left: 3%; /* Posisi teks di tengah secara horizontal */
+  overflow-y:auto;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5); /* Background semi-transparan untuk teks */
+  padding: 1px 1px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.hahaha {
+position: absolute;
+  top: 0px; /* Jarak dari atas */
+  right: 5px; /* Jarak dari kanan */
+  display: flex;
+  justify-content: center; /* Teks di tengah horizontal */
+  align-items: center; /* Teks di tengah vertikal */
+  
+ }
+ .jarakTextAuthor {
+ position: relative;
+     top: -4px;
+   margin-top:0;
+ }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+<header class="bg-blue-600 text-white p-2 fixed w-full top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+        <button class="text-2xl" id="menu-button">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1 class="text-xl font-bold mx-auto">TikDL</h1>
+    </div>
+</header>
+<div class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden" id="overlay"></div>
+<aside class="fixed inset-y-0 left-0 bg-white w-64 p-4 shadow-lg z-50 menu" id="sidebar">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-bold">MENU</h2>
+        <button class="text-2xl" id="close-button">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <nav>
+        <ul class="space-y-4">
+            <li><a class="text-gray-900 hover:text-blue-600" href="index.html">Home</a></li>
+            <li><a class="text-gray-900 hover:text-blue-600" href="index4.html">Apple music downloader</a></li>
+            <li><a class="text-gray-900 hover:text-blue-600" href="ujicoba3.html">Video terbaru di unduh</a></li>
+            <li><a class="text-gray-900 hover:text-blue-600" href="https://chat.whatsapp.com/FZtfxpSyYCN9FyCjWekyZN">Grup WhatsApp</a></li>
+        </ul>
+    </nav>
+</aside>
+<main class="container mx-auto p-4 mt-16">
+    <section class="text-center my-8">
+        <h2 class="text-3xl font-bold mb-4"><p class="text-xl font-semibold">Font Download TikTok Videos Easily</p>
+
+        </h2>
+        <p class="text-lg mb-6"><p class="text-lg font-mono">Paste the TikTok video link below to download your favorite videos.</p>
+
+        </p>
+        <div class="flex justify-center">
+            <div class="input-container w-full max-w-lg">
+                <input id="video-url" class="w-full p-2 border border-gray-300 rounded-l-md" placeholder="Paste TikTok video link here" type="text"/>
+                <i class="fas fa-paste paste-icon text-gray-600" id="paste-icon"></i>
+            </div>
+            <button id="download-button" class="bg-blue-600 text-white p-2 rounded-r-md hover:bg-blue-700">Download</button>
+        </div>
+    </section>
+    <section id="result-section" class="my-8 hidden">
+        <h3 class="text-2xl font-bold mb-4">Download Result</h3>
+        
+        
+        
+        
+        
+        <div class="bg-white p-2 rounded-lg shadow-md inline-block hasilnyaaa">
+            <div class="flex items-center mb-4 induknya">
+                <img id="author-avatar" alt="Author avatar" class="w-12 h-12 rounded-full mr-4"/>
+                <div>
+                <font size="3">
+                    <p id="video-name" class="font-semibold"></p>
+                    </font>
+                    <p id="video-author" class="text-gray-600 jarakTextAuthor"></p>
+                </div>
+          <div class="hahaha">
+      <font color="#7e7e7e" size="2px">
+          <p id="tanggalnya"></p>
+          
+      </font>
+          </div>
+            </div>
+            <div class="video-container">
+            <video id="video-player" controls></video>
+    <div class="divideonya">
+        <font color="white">
+        <p id="negara"></p></font>
+      <div class="huhu">
+         <p id="desc-title"></p>
+      </div>
+    </div>     
+        </div>
+        
+        
+        
+        
+            <div class="flex justify-between items-center bagiannya">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-eye text-gray-600"></i>
+                    <span id="video-views" class="text-gray-600"></span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-heart text-red-600"></i>
+                    <span id="video-likes" class="text-gray-600"></span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-comment text-gray-600"></i>
+                    <span id="video-comments" class="text-gray-600"></span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <span id="video-favorites" class="text-gray-600"></span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-share text-gray-600"></i>
+                    <span id="video-shares" class="text-gray-600"></span>
+                </div>
+            </div>
+            
+            
+            <div class="flex justify-between items-center space-x-3 mb-4">
+                <button id="download-video" class="bg-white text-black p-2 rounded-md border border-black hover:bg-gray-200">Download Video</button>
+                <button id="download-hd-video" class="bg-white text-black p-2 rounded-md border border-black hover:bg-gray-200">Download Video HD</button>
+                <button id="download-wm-video" class="bg-white text-black p-2 rounded-md border border-black hover:bg-gray-200">Download Video WM</button>
+            </div>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-music text-gray-600 text-2xl mr-4"></i>
+                <div>
+                    <font size="3px">
+                    <p id="music-title" class="font-semibold"></p></font>
+            <font size="2px">
+                    <p id="music-author" class="text-gray-600 jarakTextAuthor"></p></font>
+                </div>
+            </div>
+            <audio id="music-player" class="w-full mb-4 custom-audio" style="background-color: #F2F3F5;" controls></audio>
+
+            <button id="download-mp3" class="bg-white text-black p-2 rounded-md border border-black hover:bg-gray-200 w-full">Download MP3</button>
+        </div>
+    </section>
+    
+    
+    
+    <section class="my-8">
+        <h3 class="text-2xl font-bold mb-4">How It Works</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img alt="Step 1: Copy the TikTok video link" class="w-full h-48 object-cover rounded-md mb-4" height="200" src="./gambar/step1.jpg" width="300"/>
+                <h4 class="text-xl font-semibold mb-2">Step 1</h4>
+                <p>Copy the link of the TikTok video you want to download.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img alt="Step 2: Paste the link in the input field" class="w-full h-48 object-cover rounded-md mb-4" height="200" src="./gambar/step2.jpg" width="300"/>
+                <h4 class="text-xl font-semibold mb-2">Step 2</h4>
+                <p>Paste the copied link into the input field above.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img alt="Step 3: Click the download button" class="w-full h-48 object-cover rounded-md mb-4" height="200" src="./gambar/step3.jpg" width="300"/>
+                <h4 class="text-xl font-semibold mb-2">Step 3</h4>
+                <p>Click the download button to save the video to your device.</p>
+            </div>
+        </div>
+    </section>
+    <section class="my-8">
+        <center><h3 class="text-2xl font-bold mb-4">Features</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <i class="fas fa-download text-blue-600 text-4xl mb-4"></i>
+                <h4 class="text-xl font-semibold mb-2">High Quality</h4>
+                <p>Download videos in the highest quality available.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <i class="fas fa-lock text-blue-600 text-4xl mb-4"></i>
+                <h4 class="text-xl font-semibold mb-2">Secure</h4>
+                <p>Your downloads are safe and secure with us.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <i class="fas fa-bolt text-blue-600 text-4xl mb-4"></i>
+                <h4 class="text-xl font-semibold mb-2">Fast</h4>
+                <p>Experience lightning-fast download speeds.</p>
+            </div>
+        </div></center>
+    </section>
+</main>
+<footer class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto text-center">
+        <p>© 2024 TikDL. All rights reserved.</p>
+    </div>
+</footer>
+<div class="loading-overlay" id="loading-overlay">
+    <div class="loading-box">
+        <div class="text-gray-900 text-2xl">Loading...</div>
+        <div id="speed-display">Kecepatan: 0 MB/s</div>
+        
+        <div class="progress-bar">
+            <div class="progress-bar-inner" id="progress-bar-inner"></div>
+
+            
+        </div>
+    </div>
+</div>
+<script src="./tiktokdown.js"></script>
+
+</body>
+</html>
