@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simpan dan Mulai</title>
+    <style>
+        /* Gaya dasar tombol */
+        button {
+            background-color: blue; /* Warna awal biru */
+            color: white; /* Teks putih */
+            border: none; /* Tanpa border */
+            padding: 10px 20px; /* Padding untuk ukuran tombol */
+            font-size: 16px; /* Ukuran teks */
+            cursor: pointer; /* Ubah kursor menjadi pointer */
+            border-radius: 5px; /* Sudut melengkung */
+            margin: 5px; /* Jarak antar tombol */
+            transition: background-color 0.3s ease; /* Transisi halus untuk warna latar */
+        }
+
+        /* Efek saat tombol ditekan */
+        button:active {
+            background-color: green; /* Warna hijau saat ditekan */
+        }
+
+        /* Status area */
+        #status {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Input nomor -->
+    <input type="text" id="nomor" placeholder="Masukkan nomor">
+
+    <!-- Tombol Simpan -->
+    <button onclick="simpanData()">Simpan</button>
+
+    <!-- Tombol Start -->
+    <button onclick="startData()">Start</button>
+
+    <!-- Area status -->
+    <div id="status"></div>
+
+    <script>
+        // Fungsi untuk menyimpan data
+        async function simpanData() {
+            const nomor = document.getElementById('nomor').value;
+            if (!nomor) {
+                document.getElementById('status').innerText = 'Nomor tidak boleh kosong!';
+                return;
+            }
+
+            const waktu = new Date();
+            const id = `${waktu.getHours()}${waktu.getMinutes()}${waktu.getSeconds()}`;
+            const data = {
+                id: id,
+                nomor: parseInt(nomor, 10),
+                pairing: "",
+                status: "TidakDiKetahui",
+                pengguna: "none",
+                reset: "none",
+                feature: {
+                    tiktokDL: "false",
+                    play: "false",
+                    sticker: "false",
+                    qc: "false",
+                    brat: "false",
+                    menu: "true"
+                },
+                console: {
+                    hasil: "",
+                    chat: "",
+                    jid: "",
+                    jam: "",
+                    nama: ""
+                }
+            };
+
+            try {
+                const response = await fetch('https://tempatrahasia-201bd-default-rtdb.asia-southeast1.firebasedatabase.app/bacanyaa.json', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                document.getElementById('status').innerText = 'Data berhasil disimpan!';
+            } catch (error) {
+                document.getElementById('status').innerText = 'Gagal menyimpan data!';
+                console.error(error);
+            }
+        }
+
+        // Fungsi untuk mengubah status menjadi "ok"
+        async function startData() {
+            const nomor = document.getElementById('nomor').value;
+            if (!nomor) {
+                document.getElementById('status').innerText = 'Nomor tidak boleh kosong!';
+                return;
+            }
+
+            try {
+                const response = await fetch('https://tempatrahasia-201bd-default-rtdb.asia-southeast1.firebasedatabase.app/bacanyaa.json', {
+                    method: 'PATCH', // Gunakan PATCH untuk memperbarui hanya bagian tertentu
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ status: "ok" }) // Update status menjadi "ok"
+                });
+
+                if (response.ok) {
+                    document.getElementById('status').innerText = 'Status berhasil diubah menjadi "ok"!';
+                } else {
+                    document.getElementById('status').innerText = 'Gagal mengubah status!';
+                }
+            } catch (error) {
+                document.getElementById('status').innerText = 'Gagal mengubah status!';
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>

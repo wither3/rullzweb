@@ -1,0 +1,172 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>HOME</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+      body {
+          background-color:#f3f3f3;
+          
+      }
+    #sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    #sidebar.open {
+      transform: translateX(0);
+    }
+    .hidden-text {
+      display: none;
+    }
+    .kotak {
+       
+       
+        width:76px;
+        margin-left:10px;
+    }
+    .biru {
+     
+      width:270px;
+      display:flex;
+    }
+    .hijau {
+        
+        width:200px;
+        margin-top:5px;
+    }
+    .diva {
+      margin-left:15px;
+      margin-right:15px;
+        border:1px solid #8e8e8e;
+        padding:2px;
+        background-color:white;
+        border-radius:4px;
+        padding:8px;
+        width:320px;
+       
+    }
+   .button {
+   margin-top:3px;
+            background-color: blue; /* Warna awal biru */
+            color: white; /* Teks putih */
+            border: none; /* Tanpa border */
+            padding: 10px 20px; /* Padding untuk ukuran tombol */
+            font-size: 16px; /* Ukuran teks */
+            cursor: pointer; /* Ubah kursor menjadi pointer */
+            border-radius: 5px; /* Sudut melengkung */
+            transition: background-color 0.3s ease; /* Transisi halus untuk warna latar */
+        }
+
+        /* Efek saat tombol ditekan */
+        .button:active {
+            animation: changeColor 0.5s ease-in-out; /* Animasi perubahan warna */
+        }
+
+        /* Animasi keyframes untuk perubahan warna */
+        @keyframes changeColor {
+            0% {
+                background-color: blue; /* Warna awal biru */
+            }
+            100% {
+                background-color: green; /* Warna akhir hijau */
+            }
+        } 
+  </style>
+  <link rel="stylesheet" type="text/css" href="./css2.css">
+</head>
+<body>
+  <nav class="bg-blue-600 p-2 fixed w-full z-50 top-0">
+    <div class="container mx-auto flex justify-between items-center">
+      <button class="text-white text-xl" id="menu-button">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a class="text-white text-xl font-bold mx-auto" href="#">
+        FITUR JADI BOT
+      </a>
+    </div>
+  </nav>
+  <div class="fixed inset-0 bg-gray-800 bg-opacity-50 z-40 hidden" id="overlay"></div>
+  <div class="fixed inset-y-0 left-0 bg-white w-64 p-4 z-50" id="sidebar">
+    <div class="flex justify-between items-center mb-4">
+      <span class="text-xl font-bold">Menu</span>
+      <button class="text-xl" id="close-button">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <ul class="space-y-4">
+      <li>
+        <a class="text-blue-600 hover:text-blue-800" href="index.html">
+          Home
+        </a>
+      </li>
+      <li>
+        <a class="text-blue-600 hover:text-blue-800" href="https://whatsapp.com/channel/0029VaKqCt63bbV2yoFFOL2d">
+          WhatsApp channel
+        </a>
+      </li>
+      <li>
+        <a class="text-blue-600 hover:text-blue-800" href="tiktokd.html">
+          TikTok Downloader
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+ <br>
+ <br>
+ <br>
+ <div class="kadangTidakDi">
+
+    <h2>Masukkan Nomor</h2>
+    <input type="number" id="nomor" placeholder="Masukkan nomor">
+ <div class="flex-row">
+    <button class="button" onclick="simpanData()">Simpan</button>
+  <!-- Tombol Start -->
+    <button class="anggapAda" onclick="startData()">Start</button> 
+    <button class="inSchool" id="resetButton" onclick="resetStatus()">STOP</button> 
+    </div>
+    <p id="status"></p>
+<br>
+PAIRING CODE:
+  <div id="result">Loading...</div> 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>   
+
+  </div>
+ 
+ 
+ 
+ 
+ <br>
+ 
+ SETELAH MASUKKAN NOMOR WHATSAPP KLIK SIMPAN DAN TUNGGU 10 DETIK
+ 
+  </div>
+  <footer class="bg-blue-600 py-4 fixed w-full z-50 bottom-0">
+    <div class="container mx-auto flex justify-around items-center">
+      <a class="text-white text-2xl" href="index.html">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="text-white text-2xl" href="#">
+        <i class="fas fa-download"></i>
+      </a>
+      <a class="text-white text-2xl" href="#">
+        <i class="fas fa-user"></i>
+      </a>
+    </div>
+  </footer>
+  <script src="./javaS.js">
+   
+  </script>
+</body>
+</html>

@@ -1,3 +1,11 @@
+
+#nomor{
+    background-color:white;
+    border:1px solid #8083ff;
+    width: 270px;
+    height:40px;
+}
+
 .tombolWA{
         display:flex;
         background-color:white;
@@ -40,3 +48,28 @@
         margin-top:18px;
        
     }
+    .kadangTidakDi {
+        margin-left:5px;
+        margin-right:5px;
+    }
+    .anggapAda {
+        background-color:#91ff80;
+        height:40px;
+        width:60px;
+        border-radius:3px;
+    }
+    .anggapAda:hover{
+        background-color:yellow;
+        
+    }
+        .inSchool {
+        background-color:#ff2a15;
+        height:40px;
+        width:60px;
+        border-radius:3px;
+    }
+    .inSchool:hover{
+        background-color:yellow;
+        
+    }
+    
