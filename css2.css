@@ -1,9 +1,10 @@
 
 #nomor{
     background-color:white;
-    border:1px solid #8083ff;
-    width: 270px;
+    border:1px solid #5558ff;
+    width:100%;
     height:40px;
+    border-radius:3px;
 }
 
 .tombolWA{
