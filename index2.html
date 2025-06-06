@@ -75,6 +75,111 @@
                 background-color: green; /* Warna akhir hijau */
             }
         } 
+        .boxx {
+      width: 97%; /* Lebar 90% dari layar */
+      max-width: 600px; /* Maksimum lebar di PC */
+      margin:5px;
+      padding: 2px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    
+    
+   .kotak11 {
+       display:flex;
+       
+   }
+   .kotak12 {
+     
+       margin-left:9px;
+       display:flex;
+   }
+  .kotak13 {
+  
+  margin-top: 5px;
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  gap: 10px;
+  scroll-snap-type: x mandatory;
+  padding: 5px;
+}
+
+.kotak16 {
+  
+  flex: 0 0 90%;
+  scroll-snap-align: start;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+}
+
+.kotak16 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+       
+   }
+   .kotak14 {
+       
+       margin-top:3px;
+   }
+    .gambarmap {
+        border-radius:10px;
+    }
+    .kotak15 {
+      
+        height:80%;
+        margin-right:15px;
+        margin-left:15px;
+        margin-top:8px;
+        
+    }
+    .download-btn {
+  background-color: #1e90ff;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width:95%;
+  margin-top:5px;
+}
+
+.download-btn:active {
+  background-color: #aaa;
+}
+.kotak17 {
+    
+    width:99%%;
+}
+
   </style>
   <link rel="stylesheet" type="text/css" href="./css2.css">
 </head>
@@ -85,7 +190,7 @@
         <i class="fas fa-bars"></i>
       </button>
       <a class="text-white text-xl font-bold mx-auto" href="#">
-        FITUR JADI BOT
+        Map by rullzNPC
       </a>
     </div>
   </nav>
@@ -117,39 +222,92 @@
   </div>
   
  <br>
+ 
  <br>
- <br>
- <div class="kadangTidakDi">
 
-    <h2>Masukkan Nomor</h2>
-    <input type="number" id="nomor" placeholder="Masukkan nomor">
- <div class="flex-row">
-    <button class="button" onclick="simpanData()">Simpan</button>
-  <!-- Tombol Start -->
+ <div class="boxx">
+<div class="kotak14">
+   <font color="#090089"><font size="4">𝗠𝗮𝗽 𝘁𝗮𝗺𝗯𝗮𝗸 𝘂𝗱𝗮𝗻𝗴 𝗱𝗮𝗻 𝗶𝗸𝗮𝗻:</font></font>
+</div>
 
+     <div class="kotak11">
+   <img src="https://files.catbox.moe/7q4ahe.jpg" alt="test" height="50px" width="50px" class="gambarmap">
+  <div class="kotak12">
+      <div class="kotak15">
+        <center> <svg width="23px" height="23px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 0H2V16H14V7H7V0Z" fill="#000000"></path> <path d="M9 0V5H14L9 0Z" fill="#000000"></path> </g></svg></center>
+          <font color="#545454">2Mb</font>
+      </div>
+      <div class="kotak15">
+         <center><svg width="27px" height="27px" viewBox="0 0 48 48" id="b" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.c{isolation:isolate;}.d{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style> </defs> <g class="c"> <polygon class="d" points="40.9004 14.2733 40.8452 33.7266 24.0274 43.5 24.0826 24.0467 40.9004 14.2733"></polygon> <polygon class="d" points="24.0826 24.0467 24.0274 43.5 7.0996 33.7267 7.1548 14.2734 24.0826 24.0467"></polygon> <polygon class="d" points="40.9004 14.2733 24.0826 24.0467 7.1548 14.2734 23.9726 4.5 40.9004 14.2733"></polygon> </g> </g></svg><font color="#545454">1.21.4</font></center> 
+      </div>
+      <div class="kotak15"><center><svg width="27px" height="27px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.096"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0)"> <path d="M42 20V39C42 40.6569 40.6569 42 39 42H9C7.34315 42 6 40.6569 6 39V9C6 7.34315 7.34315 6 9 6H30" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M16 20L26 28L41 7" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0"> <rect width="48" height="48" fill="white"></rect> </clipPath> </defs> </g></svg><font color="#545454">Java</font></center></div>
+      <div class="kotak15"><center><svg width="27px" height="27px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.096"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0)"> <path d="M42 20V39C42 40.6569 40.6569 42 39 42H9C7.34315 42 6 40.6569 6 39V9C6 7.34315 7.34315 6 9 6H30" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M16 20L26 28L41 7" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0"> <rect width="48" height="48" fill="white"></rect> </clipPath> </defs> </g></svg><font color="#545454">Bedrock</font></center></div>
+</div></div>
+<center>
+<button onclick="pilihLink()" class="download-btn">Download</button>
+</center>
+
+<div style="margin-left:20px;">
+  <font size="1">
+<font color="#454545">download gratis</font></font>
+</div>
+
+<div class="kotak13">
+  <div class="kotak16">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/4UCF_Y0Kt8E?rel=0"
+        allowfullscreen
+        scrolling="no"
+        allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;">
+      </iframe>
     </div>
-    <p id="status"></p>
-<br>
-PAIRING CODE:
-  <div id="result">Loading...</div> 
-
- 
- 
- 
- 
- 
- 
-
-</div>   
-
   </div>
- 
- 
- 
- 
+
+  <div class="kotak16">
+    <img src="https://files.catbox.moe/ymcxj4.jpg" alt="gambar">
+  </div>
+<div class="kotak16">
+    <img src="https://files.catbox.moe/xn2llb.jpg" alt="">
+</div>
+<div class="kotak16">
+    <img src="https://files.catbox.moe/2gsrxa.jpg" alt="">
+</div>
+<div class="kotak16">
+    <img src="https://files.catbox.moe/0lw7oi.jpg" alt="">
+</div>
+<div class="kotak16">
+    <img src="https://files.catbox.moe/wp3gwy.jpg" alt="">
+</div>
+  <!-- kamu bisa tambah gambar/video lagi di sini -->
+</div>
+
  <br>
+ <div class="kotak17">
+     <font size="4">
+       𝗧𝗘𝗡𝗧𝗔𝗡𝗚 𝗠𝗔𝗣 𝗜𝗡𝗜  
+     </font><br>
+     <font size="3">
+       ᴍᴀᴘ ɪɴɪ ʙᴇʀᴛᴇᴍᴀᴋᴀɴ ᴛᴇᴍᴘᴀᴛ ᴛᴇʀᴘᴇɴᴄɪʟ ᴅᴇɴɢᴀɴ ᴛᴀᴍʙᴀᴋ ᴜᴅᴀɴɢ ᴅᴀɴ ɪᴋᴀɴ. ᴀɴᴅᴀ ᴊᴜɢᴀ ʙɪꜱᴀ ᴍᴇɴᴇᴍᴜᴋᴀɴ ᴅᴇꜱᴀ ᴋᴇᴄɪʟ ᴅɪ ᴍᴀᴘ ɪɴɪ.ᴊɪᴋᴀ ᴍᴇɴᴇᴍᴜᴋᴀɴ ʙᴀɴɢᴜɴᴀɴ ᴀɴᴇʜ-ᴀɴᴇʜ ʙᴇʀᴀʀᴛɪ ɪᴛᴜ ʙᴜᴀᴛᴀɴ ᴛᴇᴍᴀɴ ʏᴀɴɢ ᴊᴏɪɴ ᴅɪ ꜱᴇʀᴠᴇʀ  
+         
+     </font>
+     <br><br>
+     <font size="2">𝙏𝙀𝙍𝙄𝙈𝘼𝙆𝘼𝙎𝙄𝙃 𝙏𝙀𝙇𝘼𝙃 𝙈𝙀𝙈𝘽𝘼𝘾𝘼 𝙏𝙀𝙓𝙏 𝘿𝙄 𝘼𝙏𝘼𝙎</font>
+     <br>
+     <br>
+     <center>DONATE:</center><br>
+     <img src="https://files.catbox.moe/un3lpc.png" alt="">
+ </div>
  
- SETELAH MASUKKAN NOMOR WHATSAPP KLIK SIMPAN DAN TUNGGU 10 DETIK
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
  
   </div>
   <footer class="bg-blue-600 py-4 fixed w-full z-50 bottom-0">
@@ -158,14 +316,15 @@ PAIRING CODE:
         <i class="fas fa-home"></i>
       </a>
       <a class="text-white text-2xl" href="#">
-        <svg width="30px" height="30px" viewBox="0 0 24 24" data-name="025_SCIENCE" id="_025_SCIENCE" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:#ffffff;}</style></defs><path class="cls-1" d="M18,22H6a3,3,0,0,1-3-3V7A3,3,0,0,1,6,4H18a3,3,0,0,1,3,3V19A3,3,0,0,1,18,22ZM6,6A1,1,0,0,0,5,7V19a1,1,0,0,0,1,1H18a1,1,0,0,0,1-1V7a1,1,0,0,0-1-1Z"></path><path class="cls-1" d="M9,13a1,1,0,0,1-1-1V10a1,1,0,0,1,2,0v2A1,1,0,0,1,9,13Z"></path><path class="cls-1" d="M15,13a1,1,0,0,1-1-1V10a1,1,0,0,1,2,0v2A1,1,0,0,1,15,13Z"></path><path class="cls-1" d="M12,5a1,1,0,0,1-1-1V2a1,1,0,0,1,2,0V4A1,1,0,0,1,12,5Z"></path><path class="cls-1" d="M15,18H9a1,1,0,0,1,0-2h6a1,1,0,0,1,0,2Z"></path></g></svg>
+     <svg width="30px" height="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:#ffffff;fill-opacity:0;}.a,.b{stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;}.b{fill:none;}</style></defs><path class="a" d="M43,31.8268h0L24.0162,43.0493,5,32.07V21.2225"></path><path class="a" d="M9.5524,29.2747l-1.808-1.0438v5.4239l9.7816,5.6474V37.4943L15.96,36.59v-1.808l-1.888-1.09v-3.616l-4.52-2.61Z"></path><path class="a" d="M17.6883,39.3959,8.1315,33.8783l3.1372-1.7424,2.8036,1.5564"></path><path class="a" d="M34.8641,17.0935l-2.6653-1.8714-6.0555,3.6536,4.2008,2.5154v1.808l5.9607,3.4473,3.1357-1.808L43,22.7869v0l-5.4239-3.8154"></path><path class="a" d="M32.1988,15.2221l-.0467-1.8271"></path><path class="a" d="M11.2448,17.596,5,21.2225,17.6883,28.548l12.6558-7.1569-5.78-3.4656,7.588-4.53L25.3548,9.4706,20.643,12.385"></path><path class="a" d="M30.3441,23.1991,17.6883,30.356v1.808l1.4035.81v1.808l4.9244,2.8431,10.8479-6.3928v-1.94l1.5116-.8727-.0709-1.773"></path><path class="a" d="M12.803,18.4952l.0258,3.8213,1.5657.7139,1.5658-.7139V20.5088l-.023-1.9927-1.5428.8984"></path><path class="a" d="M7.7444,15.575l6.65,3.84L20.4,15.9471V8.4181L14.3945,4.9507,7.7444,8.79Z"></path><path class="a" d="M34.8641,22.1927l1.451.8377,1.261-.728V14.7186l-1.261-.7281-1.451.97Z"></path><path class="a" d="M43,25.4988l-3.616,2.0877v.904l-1.8079,1.0438v1.808l-1.808,1.0438v3.616L43,31.8268Z"></path><line class="b" x1="17.6883" y1="28.548" x2="17.6883" y2="30.356"></line></g></svg>
+     
       </a>
       <a class="text-white text-2xl" href="#">
         <i class="fas fa-user"></i>
       </a>
     </div>
   </footer>
-  <script src="./jadibot.js">
+  <script src="./javanya.js">
    
   </script>
 </body>
