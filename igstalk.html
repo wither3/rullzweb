@@ -1,0 +1,416 @@
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Situs Gaya Minecraft
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Press Start 2P', cursive;
+      background-image: url('./gambar/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+      color: #d9d9d9;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* Minecraft pixel style border */
+   
+    /* Minecraft block style background for nav */
+    nav {
+      background-color: #919191;
+      box-shadow: inset 0 0 0 2px #4a8a2f;
+      z-index: 50;
+    }
+    /* Pixel style icons */
+    .fa {
+      text-shadow:
+        1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+    }
+    /* Hamburger lines pixel style */
+    .hamburger-line {
+      width: 24px;
+      height: 3px;
+      background-color: #474747;
+      box-shadow:
+        1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+    /* Side menu styles */
+    #side-menu {
+      background-color: #2f5a1a;
+      box-shadow: inset 0 0 0 4px #4a8a2f;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100vh;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: left 0.3s ease;
+      z-index: 60;
+    }
+    #side-menu.open {
+      left: 0;
+    }
+    #side-menu a {
+      color: #a3d977;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      text-shadow:
+        1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+    }
+    #side-menu a:hover {
+      color: #d9f2a6;
+    }
+    /* Overlay behind side menu */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 55;
+    }
+    #overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    /* Minecraft text style with white color and black shadow */
+    .minecraft-text {
+      color: #ffffff;
+      text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+    
+    
+  .footer-custom {
+  background-color: #D0D1D5;
+  color: black;
+  padding: 16px;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Press Start 2P', cursive;
+  border: 2px solid black;
+  
+
+  margin-top: auto; /* ini penting! */
+}
+  
+  .navbar-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px; /* seperti p-1 Tailwind */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #c6c6c6;
+  box-shadow: inset 0 0 0 2px #919191;
+  z-index: 50;
+}
+
+.menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+  
+    
+    .kotak1 {
+       margin-left:30px;
+       margin-right:30px;
+      
+    }
+    .kotakMCstyle{
+       background-color:#5A5B5D;
+       width:100%;
+       border:1px solid black
+    
+      
+    }
+    .kotakMCstyle2{
+      background-color:#48494B;
+      margin-top:3px;
+     
+    }
+    .kotakhitam{
+        background-color: #1E1E1E;
+        margin-left:5px;
+        margin-right:5px;
+        height: 38px;
+    }
+    input[type="text"] {
+  background-color: #313234; /* Abu-abu di kotak input */
+  width:99%;
+  height:32px;
+  margin-top:5px;
+ margin-left:1px;
+ font-size:8;
+ padding-left:5px;
+}
+.tombol {
+   background-color:#58585A;
+   margin-left:5px;
+   margin-right:5px;
+   margin-top:5px;
+  border:1px solid black; 
+  height:37px;
+  font-size:8;
+}
+.tombolstalk {
+  background-color:#D0D1D5;
+  border:1px solid #e8e8e8;
+  width:100%;
+  height:31px;
+  color:black;
+  font-size:8;
+}
+.tombolstalk:hover {
+    background-color: #4f8d00;
+}
+.kotakFlex {
+    display:flex;
+    margin-right:5px;
+    margin-left:5px;
+    
+    
+}
+.profile {
+    background-color:#313234;
+    border:2px solid black;
+    color:white;
+    font-size:8;
+    height:160px;
+    width:160px;
+}
+.profileData {
+  background-color:#48494B;
+    border:2px solid black;
+    color:black;
+    font-size:8;
+    height:160px;
+    width:98%;  
+    margin-left:8px;
+}
+.navbarr {
+    background-color:#B1B2B6;
+    width:100%;
+   height: 24px;
+}
+.navbarrr {
+    background-color:#efefef;
+    width:100%;
+    height:21px;
+    font-size:5;
+}
+.diFlex {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  gap: 10px;             
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.following {
+   
+   margin-left:3px;
+   margin-right:3px;
+    color: white;
+}
+.biotext {
+    margin-top:8px;
+    margin-left:3px;
+    margin-right:3px;
+    color:white;
+    font-size:8;
+}
+.minecraft-box {
+  background-color: #494949;
+  border: 1px solid black;
+  border-radius: 1px;
+  
+  font-family: 'Minecraftia', monospace;
+  color: white;
+  width: 100px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.1s;
+}
+
+.minecraft-box:hover {
+  transform: scale(1.05);
+}
+
+.minecraft-box img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  border: 1px solid #555;
+}
+
+
+  </style>
+ </head>
+ <body>
+     
+     
+     <div id="popup" style="
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+">
+  <div style="position: relative; max-width: 90%; max-height: 90%;">
+    <span onclick="closePopup()" style="
+      position: absolute;
+      top: -30px;
+      right: 0;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    ">×</span>
+    <div id="popupContent" style="max-width: 100%; max-height: 100%; overflow: auto;"></div>
+  </div>
+</div>
+
+
+
+<nav class="navbar-custom pixel-border">
+  <div class="menu-button" id="menu-button" aria-label="Buka menu">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+  </div>
+  <div class="navbar-title minecraft-text">
+    Instagram Stalk
+  </div>
+  <div style="width: 24px;"></div> <!-- placeholder agar rata kanan -->
+</nav>
+
+  
+  <div aria-hidden="true" id="side-menu">
+   <a href="./index.html" tabindex="-1">
+    Beranda
+   </a>
+   <a href="#" tabindex="-1">
+    belum jadi
+   </a>
+   <a href="#" tabindex="-1">
+    belum jadi 
+   </a>
+   <a href="#" tabindex="-1">
+    belum jadi
+   </a>
+  </div>
+  <div id="overlay" tabindex="-1">
+  </div>
+  <br>
+  <br><br>
+  <center><font size="1">Instagram stalk by rullzNPC</font></center>
+  <br>
+  <div class="kotak1">
+      
+      <div class="kotakMCstyle">
+      <div class="kotakMCstyle2">
+          
+          <div style="margin-left:5px;">
+         <font size="0.6"><font color="white">Username:</font></font><br></div>
+         <div class="kotakhitam">
+        <input
+      type="text"
+      id="usernameInput"
+      placeholder="masukkan username..." />     
+      </div>
+
+<div class="tombol">
+ <button id="tombolStalk" onclick="stalk()" class="tombolstalk">Mendapatkan data</button>
+
+</div>
+<br>
+      </div></div></div>
+  <br>
+  <div class="kotakFlex">
+  <div class="profile" id="profile">
+    <p>Masukkan username di atas untuk mulai..</p>
+  </div>
+  
+  <div class="profileData">
+     <div class="navbarr">
+         <div class="navbarrr"><center><div id="nama">nama akan di tampilkan di sini</div></center></div>
+     </div>
+     <div id="datanya"><font color="white">pencet tombol dulu</font></div>
+     <div id="bionya"></div>
+  </div>
+  
+  </div>
+  <br>
+     
+   <div id="posts"></div>
+   
+      
+  
+  
+  <br>
+  <br>
+  <br>
+  
+  
+  
+  <footer class="footer-custom">
+  <p>© 2025 Instagram stalk Minecraft style by rullzNPC <i class="fab fa-minecraft"></i></p>
+</footer>
+
+  
+<script src="./igstalk.js"></script>
+ 
+ </body>
+</html>
