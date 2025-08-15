@@ -54,7 +54,7 @@ document.getElementById('menu-button').addEventListener('click', function() {
 
     async function fetchTikTokData() {
       try {
-        const response = await fetch('https://api.tiklydown.eu.org/api/stalk?user=qhairulpratama');
+        const response = await fetch('https://api.tiklydown.eu.org/api/stalk?user=qhairulpratama&apikey=tk_eee6230d9b3a769a1879fb3274b2efaaa699e80b457ab5c38b22522126bcd8a4');
         const data = await response.json();
         const user = data.data.user;
         const stats = data.data.stats;
