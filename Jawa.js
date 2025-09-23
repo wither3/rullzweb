@@ -1,13 +1,16 @@
 document.getElementById("downloadBtn").addEventListener("click", function() {
   const link = document.createElement("a");
-  link.href = "https://sfile.mobi/9UFTeWXAeAU"
+  link.href = "https://sfile.mobi/37CdNwS87en"
  
   link.click();
 });
+//<<<<bedrock
 
+
+//java>>>>
 document.getElementById("downloadBtn1").addEventListener("click", function() {
   const link = document.createElement("a");
-  link.href = "https://sfile.mobi/6srRl2cRlSX"
+  link.href = "https://sfile.mobi/bdWig8Rb567"
  
   link.click();
 });
