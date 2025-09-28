@@ -1,6 +1,10 @@
+
+
+
+
 document.getElementById("downloadBtn").addEventListener("click", function() {
   const link = document.createElement("a");
-  link.href = "https://sfile.mobi/37CdNwS87en"
+  link.href = "https://sfile.mobi/2hUofUPOnuk"
  
   link.click();
 });
@@ -17,9 +21,3 @@ document.getElementById("downloadBtn1").addEventListener("click", function() {
 
 
 
-const menuIcon = document.getElementById('menu-icon');
-const menu = document.getElementById('menu');
-
-menuIcon.addEventListener('click', () => {
-  menu.classList.toggle('show');
-});
