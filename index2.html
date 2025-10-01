@@ -1,346 +1,294 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="in">
 <head>
-  <meta charset="UTF-8">
+     <meta charset="UTF-8">
+    <title>Map Tambak udang dan ikan</title>
+      <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Map tambak udang dan ikan by rullzNPC</title>
-  <style>
-   body {
-  margin: 0;       /* hapus margin bawaan */
-  padding: 0;      /* hapus padding bawaan */
-background-image: url("./gambar/Bg.jpg");
-  background-repeat: no-repeat;   /* jangan diulang */
-  background-size: cover;         /* isi penuh layar */
-  background-position: center;
-  background-attachment: fixed;
-  
-}
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<style>
+  body {
+  margin: 0;       
+  padding: 0;      
+ background-color:rgba(249, 255, 255, 1);
  
-    .box {
-      width: 80px;
-      height: 80px;
-      background-image: url("./gambar/gambarMap.jpg");
-  background-size: cover;
-  background-position: center;
-      clip-path: polygon(81% 100%, 0 100%, 0 17%, 15% 0, 100% 0, 100% 35%, 100% 78%);
-      position: absolute;
-    top: -40px;             /* muncul di atas */
-    left: 50%;              /* tengah horizontal */
-    transform: translateX(-50%);
-    z-index: 4;
+ 
+}
+  
+     #sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
     }
-  
-   .box2 {
-     width:82px;
-     height:82px;
-     background:#a1a1a1;
-    clip-path: polygon(81% 100%, 0 100%, 0 17%, 15% 0, 100% 0, 100% 35%, 100% 78%); 
-    top: -41px;             /* muncul di atas */
-    left: 50%;              /* tengah horizontal */
-    transform: translateX(-50%);
-    z-index: 3;
-    position: absolute;
+    #sidebar.open {
+      transform: translateX(0);
+    }
+    .hidden-text {
+      display: none;
+    }
+    
+   .kotak1{
+      background-image: url("./gambar/2025-09-30_21.09.18-min.png");
+      height: 30vh;
+      width: 100%;
+      background-size:cover;
+      background-position:center;
+      color:white;
+      position:relative;
+      
+      
+  }
+  @media (max-width:768px){
+      .kotak1 {
+          background-image: url("./gambar/2025-09-30_21.09.18-min.png");
+      height: 50vh;
+      width: 100%;
+      background-size:cover;
+      background-position:center;
+      color:white;
+      position:relative;
+      
+      
+      }
+  } 
+
+
+
+
+   .kotakputih {
+    background: linear-gradient(to bottom, rgba(249, 255, 255, 0), rgba(249, 255, 255, 1));
+     color:#343434;
+     width:100%;
+     height:100px;
+     position:absolute;
+     z-index:1;
+     bottom:0;
+     left:0;
  }
-
-
-
-
-.tomboldownload {
-    width:282px;
-    height:49px;
-    background:#a1a1a1;
-    clip-path: polygon(96% 100%, 2% 100%, 0 93%, 4% 0, 98% 0, 100% 6%);
-    bottom: -11px;             /* muncul di atas */
-    left: 50%;              /* tengah horizontal */
-    transform: translateX(-50%);
-    z-index: 5;
-    position: absolute;
-}
-
-.tomboldownload2 {
-    width:280px;
-    height:47px;
-    background:#f5f3f5;
-    clip-path: polygon(96% 100%, 2% 100%, 0 93%, 4% 0, 98% 0, 100% 6%);
-    bottom: -10px;            
-    left: 50%;              
-    transform: translateX(-50%);
-    z-index: 6;
-    position: absolute;
-    display: block;
-    Border:none;
-    padding:0;
-    
-}
- .tomboldownload2:hover {
-     background:#ff0a00a7;
-     color:#fff
- }
-   
-    
-   .bentukxarena {
-       width: 302px;
-       height: 202px;
-       background: #a1a1a1;
-       clip-path: polygon(0 100%, 8% 34%, 4% 28%, 11% 0, 70% 0, 79% 5%, 100% 5%, 96% 41%, 92% 71%, 90% 81%, 94% 87%, 94% 100%);
-       position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-   
-   } 
-   
-   .bentukxarena1 {
-       width: 300px;
-       height: 200px;
-       background: #E4E4EC;
-       clip-path: polygon(0 100%, 8% 34%, 4% 28%, 11% 0, 70% 0, 79% 5%, 100% 5%, 96% 41%, 92% 71%, 90% 81%, 94% 87%, 94% 100%);
-       position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    
-   } 
-   
-   
-   
-   
-   
-   
  
 
- .scrollSamping{
-     overflow-x:auto;
-     width: 100%;
-     white-space: nowrap;
-     
-    
- }
- .kotakAgarFlex{
-     display:flex;
-     gap:20px;
- }
- .container {
-    position: relative; /* parent buat positioning */
-    width: 300px;
-    height: 200px;
-    margin: 50px auto;
-    flex-shrink:0;
-    margin-left:10px;
+  .kotak{
+      background-color:white;
+      width:90%;
+      height:fit-content;
+      border:1px solid #b2b2b2;
+      border-radius:5px;
+      margin-top:25px;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.27);
+      
   }
   
-.kotakTextTengah {
-    top:25%;
-    left:15%;
-    z-index:7;
-   
-    position:absolute;
+.download {
+    background-color:#098600;
+    width:95%;
+    height:fit-content;
+    padding: 5px 5px;
+    margin-bottom:5px;
+    border-radius:5px;
+    color:white;
 }
-.kotakDeskripsiTengah{
-  top:41%;
-    left:20%;
-    z-index:8;
-   
-    position:absolute;  
-    color:#747474;
+.download:hover{
+    background-color:#da0009;
 }
-
-.kotakDeskripsiBawah{ 
-position: relative;
-    height:600px;
+.kotakbawah1{
+    background-color:#cf001a;
     width:100%;
-    background:#ededed;
-    clip-path: polygon(0 100%, 0 9%, 8% 4%, 25% 4%, 33% 0, 65% 0, 74% 4%, 90% 4%, 100% 7%, 100% 100%);
-}
-
-.kotakDeskripsiBawah2{
-    height:600px;
-    width:100%;
-    background:#f6f6f6;
-    clip-path: polygon(0 100%, 0 9%, 23% 9%, 35% 0, 66% 0, 79% 9%, 100% 9%, 100% 100%);
-   position :absolute;
-   z-index:1;
-   top:2%;
-}
-.bagianDeskripsi{
-height:490px;
-width:95%;
-position:absolute;
-z-index:2;
-top:18%;
-margin-left:6px;
-
-}
-.judulDeskripsi{
-height:25px;
-width: 120px;
-position: absolute;
-z-index:3;
-top:1%;
-left:35%;
-
-}
-
-
-.navigasiAtas{
-    height: 40px;
-    width:100%;
+    height:fit-content;
+    top:0;
+    margin-top:20px;
     
-    display:flex;
-}
-
-.navigasiMenu{
-   height: 40px;
-   width:40px;
-   background:#f4f4f4;
-   clip-path: polygon(7% 100%, 89% 100%, 100% 87%, 92% 0, 10% 0, 0 12%);
-   margin-left:5px;
-}
-
-.judulNavigasi{
-    height:40px;
-    width:50%;
-    background:#f4f4f4;
-    clip-path: polygon(0 0, 10% 100%, 91% 100%, 100% 0);
-    margin-left:14%;
-    margin-right:10%;
     
 }
-
-.gantiBackground{
- height: 40px;
- width:40px;
- background:#f4f4f4;
- clip-path: polygon(0 84%, 13% 100%, 92% 100%, 100% 17%, 87% 0, 8% 0);
- position: absolute;
+ .kotakBawah{
+ background-color:#9f0014;
+ width:100%;
+ height:fit-content;
+ margin-top:10px;
+ color:white;
  top:0;
- right:0;
- margin-right:5px;
-}
-
-.linkdownload{
-    margin-top:6px;
-}
-
-.menu {
-  position: fixed;
-  top: 0;
-  left: -200px; /* sembunyikan menu di luar layar */
-  width: 200px;
-  height: 100vh;
-  background-color: #f0f0f0;
-  padding: 20px;
-  transition: left 0.5s;
-}
-
-.menu.show {
-  left: 0; /* tampilkan menu */
-}
-
-#menu-icon {
-  cursor: pointer;
-}
-
-  </style>
-</head>
+ }
+ .umpan{
+     
+     height:2px;
+     width:100%;
+ }
+ .musik{
+ height:40px;
+ width:100%;
+     position: absolute;
+     
+     z-index:2;
+     bottom:60px;
+    
+     
+ }
+ .musik1{
+     width:90%;
+     height:40px;
+     
+ }
+  .player { max-width:400px; margin:auto; }
+    .controls { display:flex; align-items:center; gap:12px; }
+    .progress { 
+      flex:1; height:8px;  
+      border-radius:2px; overflow:hidden; cursor:pointer;
+      Border:1px solid red;
+    }
+    .progress-bar { 
+      width:0; height:100%; background:red; 
+      transform-origin:left;
+      float:left;
+    }
+</style>
 <body>
-<div class="navigasiAtas">
-    <div class="navigasiMenu">
-<svg id="menu-icon" width="38px" height="38px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+  <nav class="bg-red-600 p-2 fixed w-full z-50 top-0">
+    <div class="container mx-auto flex justify-between items-center">
+      <button class="text-white text-xl" id="menu-button">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a class="text-white text-xl font-bold mx-auto" href="#">
+        BERANDA
+      </a>
+    </div>
+  </nav>
+  <div class="fixed inset-0 bg-gray-800 bg-opacity-50 z-50 hidden" id="overlay"></div>
+  <div class="fixed inset-y-0 left-0 bg-white w-64 p-4 z-50" id="sidebar">
+    <div class="flex justify-between items-center mb-4">
+      <span class="text-xl font-bold">Menu</span>
+      <button class="text-xl" id="close-button">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <ul class="space-y-4">
+      <li>
+        <a class="text-red-600 hover:text-red-800" href="index.html">
+          Home
+        </a>
+      </li>
+      <li>
+        <a class="text-red-600 hover:text-blue-800" href="https://whatsapp.com/channel/0029VaKqCt63bbV2yoFFOL2d">
+          WhatsApp channel
+        </a>
+      </li>
+      <li>
+        <a class="text-red-600 hover:text-blue-800" href="tiktokd.html">
+          TikTok Downloader
+        </a>
+      </li>
+      <li>
+        <a class="text-red-600 hover:text-blue-800" href="igstalk.html">
+          Instagram stalk
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  
+  
+<div class="kotak1">
+    
+  <div class="musik">
+      <center>
+      <div class="musik1">
+        <div class="player">
+    <div class="controls">
+      <button id="playBtn" class="btn"><i class="fa fa-play"></i></button>
+      <div class="progress" id="progress">
+        <div class="progress-bar" id="bar"></div>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-
-<div class="judulNavigasi">
-<div class="linkdownload">
-    <center>
-<font color="#656565">LINK DOWNLOAD</font></center></div>
-</div>
-
-<div class="gantiBackground"><svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1395 12.0002C14.1395 13.1048 13.2664 14.0002 12.1895 14.0002C11.1125 14.0002 10.2395 13.1048 10.2395 12.0002C10.2395 10.8957 11.1125 10.0002 12.1895 10.0002C13.2664 10.0002 14.1395 10.8957 14.1395 12.0002Z" stroke="#808080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.57381 18.1003L5.12169 12.8133C4.79277 12.2907 4.79277 11.6189 5.12169 11.0963L7.55821 5.89229C7.93118 5.32445 8.55898 4.98876 9.22644 5.00029H12.1895H15.1525C15.8199 4.98876 16.4477 5.32445 16.8207 5.89229L19.2524 11.0923C19.5813 11.6149 19.5813 12.2867 19.2524 12.8093L16.8051 18.1003C16.4324 18.674 15.8002 19.0133 15.1281 19.0003H9.24984C8.5781 19.013 7.94636 18.6737 7.57381 18.1003Z" stroke="#808080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>
-</div>
- <br>
+  <audio id="audio" src="ssstik.io_1759310173661.mp3"></audio>
+  
+      </div></center>
+  </div>
     
     
-<!-- bagian xarena -->
-<div class="scrollSamping">
-<div class="kotakAgarFlex">
-
-
-
-
-<!-- bagian dalam xarena-->
-<div class="container">
-<div class="bentukxarena"></div>
-<div class="bentukxarena1"></div>
-<div class="box"></div>
-<div class="box2"></div>
-
-<div class="tomboldownload"></div>
-<button id="downloadBtn1" class="tomboldownload2">DOWNLOAD</button>
-<div class="kotakTextTengah">MAP TAMBAK UDANG DAN IKAN </div>
-<div class="kotakDeskripsiTengah">
- 𝚅𝚎𝚛𝚜𝚒𝚘𝚗: 𝙹𝚊𝚟𝚊 𝟷.𝟸𝟷.𝟺<br>
- 𝚂𝚒𝚣𝚎: -+𝟸𝟽𝙼𝚋<br>
- 𝙼𝚊𝚙 𝚋𝚢: 𝚛𝚞𝚕𝚕𝚣𝙽𝙿𝙲<br>
+    <div class="kotakputih">
+      <div style="margin-top:30px;"><center><span style="font-weight: bold; font-size:24px; color:#0010a6;">LINK DOWNLOAD DI BAWAH</span>
+</center></div>
+    </div>
+    
 </div>
-</div>
-
-<!-- kotak xarena 2-->
-
-<div class="container">
-<div class="bentukxarena"></div>
-<div class="bentukxarena1"></div>
-<div class="box"></div>
-<div class="box2"></div>
-
-<div class="tomboldownload"></div>
-<button id="downloadBtn" class="tomboldownload2">DOWNLOAD</button>
-<div class="kotakTextTengah">MAP TAMBAK UDANG DAN IKAN</div>
-<div class="kotakDeskripsiTengah">
- 𝚅𝚎𝚛𝚜𝚒𝚘𝚗: 𝙱𝚎𝚍𝚛𝚘𝚌𝚔 𝟷.𝟸𝟷.𝟷𝟶𝟷<br>
- 𝚂𝚒𝚣𝚎: -+𝟸𝟽𝙼𝚋<br>
- 𝙼𝚊𝚙 𝚋𝚢: 𝚛𝚞𝚕𝚕𝚣𝙽𝙿𝙲<br>
-</div>
-</div>
-
-
-
-</div>
-</div>
-<!--batas scroll -->
-
-<div class="kotakDeskripsiBawah">
-<div class="kotakDeskripsiBawah2">
-<div class="judulDeskripsi"><center>𝗗𝗲𝘀𝗸𝗿𝗶𝗽𝘀𝗶</center></div>
-<div class="bagianDeskripsi">
-  𝗧𝗘𝗡𝗧𝗔𝗡𝗚 𝗠𝗔𝗣 𝗜𝗡𝗜    <br>
- ᴍᴀᴘ ɪɴɪ ʙᴇʀᴛᴇᴍᴀᴋᴀɴ ᴛᴇᴍᴘᴀᴛ ᴛᴇʀᴘᴇɴᴄɪʟ ᴅᴇɴɢᴀɴ ᴛᴀᴍʙᴀᴋ ᴜᴅᴀɴɢ ᴅᴀɴ ɪᴋᴀɴ. ᴀɴᴅᴀ ᴊᴜɢᴀ ʙɪꜱᴀ ᴍᴇɴᴇᴍᴜᴋᴀɴ ᴅᴇꜱᴀ ᴋᴇᴄɪʟ ᴅɪ ᴍᴀᴘ ɪɴɪ.ᴊɪᴋᴀ ᴍᴇɴᴇᴍᴜᴋᴀɴ ʙᴀɴɢᴜɴᴀɴ ᴀɴᴇʜ-ᴀɴᴇʜ ʙᴇʀᴀʀᴛɪ ɪᴛᴜ ʙᴜᴀᴛᴀɴ ᴛᴇᴍᴀɴ ʏᴀɴɢ ᴊᴏɪɴ ᴅɪ ꜱᴇʀᴠᴇʀ  <br><br>  
- <font size="2">𝕄𝕒𝕡 𝕚𝕟𝕚 𝕕𝕚 𝕓𝕦𝕒𝕥 𝕠𝕝𝕖𝕙 @𝕢𝕙𝕒𝕚𝕣𝕦𝕝𝕡𝕣𝕒𝕥𝕒𝕞𝕒 𝕕𝕒𝕟 𝕥𝕖𝕞𝕒𝕟2 𝕪𝕒𝕟𝕘 𝕚𝕜𝕦𝕥 𝕞𝕖𝕞𝕓𝕒𝕟𝕥𝕦</font><br><br>
- 𝗠𝘆 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 𝗴𝗿𝗼𝘂𝗽:<br><br>
  
- MINECRAFT BEDROCK GROUP:<br>
- <a href="https://chat.whatsapp.com/JYoK6GPec1r8KSuFew4UJo?mode=ems_copy_t">Pencet teks ini untuk join grup Minecraft bedrock</a>
-<br>
-<br>
-MINECRAFT JAVA GROUP:<br>
-<a href="https://chat.whatsapp.com/FZtfxpSyYCN9FyCjWekyZN?mode=ems_copy_t">Pencet teks ini untuk join grup Minecraft bedrock</a>  
-<br><br>
-𝙏𝙀𝙍𝙄𝙈𝘼𝙆𝘼𝙎𝙄𝙃 𝙏𝙀𝙇𝘼𝙃 𝙈𝙀𝙈𝘽𝘼𝘾𝘼 𝙏𝙀𝙓𝙏 𝘿𝙄 𝘼𝙏𝘼𝙎<br><br>
-<center>
-<font size="2">𝗗𝗘𝗦𝗜𝗚𝗡 𝗕𝗬 𝗥𝗨𝗟𝗟𝗭 𝗡𝗢𝗢𝗕 𝗗𝗘𝗦𝗜𝗚𝗡𝗘𝗥</font></center>
-
-
-
+ <center>
+<div class="kotak">
+   <img src="./gambar/joingrup.jpg"><p>
+   <span style="font-weight: bold; font-size:20px; color:#383838;">JOIN GRUP WHATSAPP</span></p>
+   <p><span style="font-weight: bold; font-size:10px; color:#383838;">Klik tombol download di bawah untuk join grup WhatsApp</span></p>
+   <p><span style="font-weight: bold; font-size:10px; color:#383838;">MAP UPDATE VERSI 30 SEPTEMBER 2025</span></p>
+     <p><span style="font-weight: bold; font-size:10px; color:#383838;">KALAU MAU DOWNLOAD MAP NYA ADA DI BAWAH</span></p>
+   <p>
+       <button id="joingrupminecraft" class="download">KLIK UNTUK BERGABUNG</button>
+   </p>
 </div>
+     
+<div class="kotak">
+   <img src="./gambar/Minecraft_Map4.jpg"><p>
+   <span style="font-weight: bold; font-size:20px; color:#383838;">Map tambak udang dan ikan (JAVA)</span></p>
+   <p><span style="font-weight: bold; font-size:10px; color:#383838;">Klik tombol download di bawah untuk mengunduh map ini</span></p>
+   <p><span style="font-weight: bold; font-size:10px; color:#383838;">Map by rullzNPC</span></p>
+   <p>
+       <button id="downloadJAVA" class="download">DOWNLOAD NOW</button>
+   </p>
+</div>
+
+<div class="kotak">
+   <img src="./gambar/Minecraft_Map4.jpg"><p>
+   <span style="font-weight: bold; font-size:20px; color:#383838;">Map tambak udang dan ikan (BEDROCK)</span></p>
+   <p><span style="font-weight: bold; font-size:10px; color:#383838;">Klik tombol download di bawah untuk mengunduh map ini</span></p>
+   <p><span style="font-weight: bold; font-size:10px; color:#383838;">Map by rullzNPC</span></p>
+   <p>
+       <button id="downloadBEDROCK" class="download">DOWNLOAD NOW</button>
+   </p>
+</div>
+
+</center>
+   
+
+
+
+
+
+
+
+
+
+
+
+<div class="kotakbawah1"><div class="umpan"></div>
+<div class="kotakBawah"><br>
+    <center>
+ <p><span style="font-weight: bold; font-size:13px; color:white;">WEBSITE INI DI BUAT OLEH RULLZNPC</span></p>
+ <span style="font-weight: bold; font-size:13px; color:white;">DI DESAIN OLEH RULLZ NOOB DESIGNER </span>
+ </center>
+ <br>
+ <br>
+ <br>
+</div>
+
     
-</div>
-</div>
-
-
-
-
-
-<script src="Jawa.js"></script>
+</div><br>
+   
+ <footer class="bg-red-600 py-3 fixed w-full z-99 bottom-0">
+    <div class="container mx-auto flex justify-around items-center">
+      <a class="text-white text-2xl" href="index.html">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="text-white text-2xl" href="index2.html">
+        <svg width="30px" height="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:#ffffff;fill-opacity:0;}.a,.b{stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;}.b{fill:none;}</style></defs><path class="a" d="M43,31.8268h0L24.0162,43.0493,5,32.07V21.2225"></path><path class="a" d="M9.5524,29.2747l-1.808-1.0438v5.4239l9.7816,5.6474V37.4943L15.96,36.59v-1.808l-1.888-1.09v-3.616l-4.52-2.61Z"></path><path class="a" d="M17.6883,39.3959,8.1315,33.8783l3.1372-1.7424,2.8036,1.5564"></path><path class="a" d="M34.8641,17.0935l-2.6653-1.8714-6.0555,3.6536,4.2008,2.5154v1.808l5.9607,3.4473,3.1357-1.808L43,22.7869v0l-5.4239-3.8154"></path><path class="a" d="M32.1988,15.2221l-.0467-1.8271"></path><path class="a" d="M11.2448,17.596,5,21.2225,17.6883,28.548l12.6558-7.1569-5.78-3.4656,7.588-4.53L25.3548,9.4706,20.643,12.385"></path><path class="a" d="M30.3441,23.1991,17.6883,30.356v1.808l1.4035.81v1.808l4.9244,2.8431,10.8479-6.3928v-1.94l1.5116-.8727-.0709-1.773"></path><path class="a" d="M12.803,18.4952l.0258,3.8213,1.5657.7139,1.5658-.7139V20.5088l-.023-1.9927-1.5428.8984"></path><path class="a" d="M7.7444,15.575l6.65,3.84L20.4,15.9471V8.4181L14.3945,4.9507,7.7444,8.79Z"></path><path class="a" d="M34.8641,22.1927l1.451.8377,1.261-.728V14.7186l-1.261-.7281-1.451.97Z"></path><path class="a" d="M43,25.4988l-3.616,2.0877v.904l-1.8079,1.0438v1.808l-1.808,1.0438v3.616L43,31.8268Z"></path><line class="b" x1="17.6883" y1="28.548" x2="17.6883" y2="30.356"></line></g></svg>
+     
+      </a>
+      <a class="text-white text-2xl" href="index3.html">
+        <svg width="23px" height="23px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>file_player_media [#ffffff]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -1999.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M16.4806,1850.51423 L12.4966,1852.78995 C11.8296,1853.17074 10.9996,1852.68901 10.9996,1851.92144 L10.9996,1847.37099 C10.9996,1846.60342 11.8296,1846.12269 12.4966,1846.50348 L16.4806,1848.7782 C17.1526,1849.16199 17.1526,1850.13044 16.4806,1850.51423 L16.4806,1850.51423 Z M21.9996,1855.64935 C21.9996,1856.20104 21.5526,1856.99059 20.9996,1856.99059 L6.9996,1856.99059 C6.4476,1856.99059 5.9996,1856.20104 5.9996,1855.64935 L5.9996,1841.6572 C5.9996,1841.10551 6.4476,1840.99957 6.9996,1840.99957 L15.9996,1840.99957 L15.9996,1844.65552 C15.9996,1845.7589 16.8956,1846.9962 17.9996,1846.9962 L21.9996,1846.9962 L21.9996,1855.64935 Z M23.7076,1844.36268 L18.2926,1839.12263 C18.1056,1838.93473 17.8506,1839.00069 17.5856,1839.00069 L5.9996,1839.00069 C4.8956,1839.00069 3.9996,1839.55338 3.9996,1840.65776 L3.9996,1856.64878 C3.9996,1857.75216 4.8956,1858.98947 5.9996,1858.98947 L21.9996,1858.98947 C23.1046,1858.98947 23.9996,1857.75216 23.9996,1856.64878 L23.9996,1845.06929 C23.9996,1844.80443 23.8946,1844.54958 23.7076,1844.36268 L23.7076,1844.36268 Z" id="file_player_media-[#ffffff]"> </path> </g> </g> </g> </g></svg>
+      </a>
+    </div>
+  </footer> 
+     
+<script src="./map.js"></script> 
 </body>
 </html>
